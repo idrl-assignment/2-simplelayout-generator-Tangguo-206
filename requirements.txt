@@ -2,5 +2,3 @@ pytest
 numpy
 matplotlib
 scipy
-sys
-# TODO: add additional package
