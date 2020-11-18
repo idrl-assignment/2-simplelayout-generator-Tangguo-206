@@ -20,5 +20,5 @@ def save_fig(matrix, file_name):
 
 def make_dir(outdir):
     path = Path(outdir)
-    if not path.exists():
-        path.mkdir(parents=True, exist_ok=True)
+    # if not path.exists():
+    path.mkdir(parents=True, exist_ok=True)
