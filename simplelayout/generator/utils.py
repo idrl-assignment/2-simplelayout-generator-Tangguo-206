@@ -15,7 +15,7 @@ def save_matrix(matrix, file_name):
 def save_fig(matrix, file_name):
     plt.imshow(matrix)
     plt.savefig(file_name + '.jpg')
-    plt.show()
+    # plt.show()
 
 
 def make_dir(outdir):
