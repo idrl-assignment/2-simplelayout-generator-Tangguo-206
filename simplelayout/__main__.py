@@ -1,9 +1,15 @@
-# TODO 正确导入函数 generate_matrix, save_matrix, save_fig
-from simplelayout.cli import get_options  # TODO: 保证不修改本行也可以正确导入
+from .generator import core
+from .generator import utils
+from simplelayout.cli import get_options
 
 
 def main():
-    raise NotImplementedError  # TODO 使用导入的函数按命令行参数生成数据，包括 mat 文件与 jpg 文件
+    positions_params = get_options()
+    generated_matrix = core.generate_matrix(positions_params.board_grid, positions_params.unit_grid,
+                                            positions_params.unit_n, positions_params.positions)
+    utils.make_dir(positions_params.outdir)
+    utils.save_matrix(generated_matrix, positions_params.file_name)
+    utils.save_fig(generated_matrix, positions_params.file_name)
 
 
 if __name__ == "__main__":
