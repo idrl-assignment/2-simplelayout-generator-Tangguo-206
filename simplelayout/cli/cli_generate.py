@@ -17,7 +17,8 @@ def get_options():
     if (
         options.positions[0] != 1
         or len(options.positions) != options.unit_n
-        or max(options.positions) > (options.board_grid / options.unit_grid) ** 2
+        or max(options.positions) >
+        (options.board_grid / options.unit_grid) ** 2
     ):
         sys.exit("位置参数不符合要求！")
     return options
