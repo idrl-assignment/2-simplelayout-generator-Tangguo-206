@@ -18,7 +18,9 @@ def generate_matrix(
         np.ndarray: 布局矩阵
     """
     random_matrix = np.zeros((board_grid, board_grid))
+    temp = (board_grid / unit_grid)
     for i in range(unit_n):
-        random_matrix[positions[i] - 1:positions[i] - 1 + unit_grid,
-                      positions[i] - 1:positions[i] - 1 + unit_grid] = 1
+        temp_x = int((positions[i] - 1) // temp * temp)
+        temp_y = int((positions[i] - 1) % temp * temp)
+        random_matrix[temp_x:temp_x + unit_grid, temp_y:temp_y + unit_grid] = 1
     return random_matrix
