@@ -11,9 +11,9 @@ def main():
     )
     utils.make_dir(positions_params.outdir)
     utils.save_matrix(generated_matrix, positions_params.outdir +
-                      '/' + positions_params.file_name + '.mat')
+                      '/' + positions_params.file_name)
     utils.save_fig(generated_matrix, positions_params.outdir +
-                   '/' + positions_params.file_name + '.jpg')
+                   '/' + positions_params.file_name)
 
 
 if __name__ == "__main__":
