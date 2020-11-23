@@ -8,15 +8,17 @@ import scipy.io as sio
 
 
 def save_matrix(matrix, file_name):
-    # TODO: 存储 matrix 到 file_name.mat, mdict 的 key 为 "matrix"
-    raise NotImplementedError
+    mdic = {"matrix": matrix}
+    sio.savemat(file_name + '.mat', mdic)
 
 
 def save_fig(matrix, file_name):
-    # TODO: 将 matrix 画图保存到 file_name.jpg
-    raise NotImplementedError
+    plt.imshow(matrix)
+    plt.savefig(file_name + '.jpg')
+    # plt.show()
 
 
 def make_dir(outdir):
-    # TODO: 当目录 outdir 不存在时创建目录
-    raise NotImplementedError
+    path = Path(outdir)
+    # if not path.exists():
+    path.mkdir(parents=True, exist_ok=True)
